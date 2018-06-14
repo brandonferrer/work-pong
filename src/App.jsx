@@ -37,9 +37,6 @@ const styles = {
   mainWrapper: css`
     padding: 0;
     height: calc(100vh - 125px);
-    @media (max-width: 420px) {
-      height: calc(100vh - 160px);
-    }
   `,
   marginBottom52: css`
     margin-bottom: 52px;

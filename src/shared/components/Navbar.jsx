@@ -10,7 +10,7 @@ const Navbar = ({ openMenuToggle }) => (
     </Menu.Item>
     <Menu.Menu position="right">
       <Menu.Item>
-        <Button compact primary>
+        <Button compact primary onClick={() => alert('Yo!')}>
           Login
         </Button>
       </Menu.Item>
@@ -18,7 +18,7 @@ const Navbar = ({ openMenuToggle }) => (
         onClick={openMenuToggle}
         className={styles.menuHamburgerWrapper}
       >
-        <Icon name="content" />
+        <Icon name="content" style={{ cursor: 'pointer' }} />
         <span className={styles.mobileHidden}>Menu</span>
       </Menu.Item>
     </Menu.Menu>
@@ -34,6 +34,7 @@ const styles = {
   `,
   menuHamburgerWrapper: css`
     font-size: 1.25rem;
+    cursor: pointer !important;
   `,
   mobileHidden: css`
     @media (max-width: 768px) {

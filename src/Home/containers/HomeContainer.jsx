@@ -1,11 +1,12 @@
 import React from 'react'
+import { Container } from 'semantic-ui-react'
 import Leaderboard from '../components/Leaderboard'
 
 const HomeContainer = () => (
-  <div>
+  <Container>
     <h1>Leaderboard</h1>
     <Leaderboard />
-  </div>
+  </Container>
 )
 
 export default HomeContainer
