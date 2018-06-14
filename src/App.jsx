@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div>
         <Navbar openMenuToggle={this.openMenuToggle} />
-        <SideMenu openMenu={openMenu} className={styles.marginTop52}>
+        <SideMenu openMenu={openMenu} className={styles.sideMenu}>
           <div className={cx(styles.mainWrapper, styles.marginTop52)}>
             <Switch>
               <Route exact path="/" component={HomeContainer} />
@@ -35,10 +35,13 @@ export default App
 
 const styles = {
   mainWrapper: css`
-    padding: 1.25rem;
-    height: 100vh;
+    padding: 0;
+    height: calc(100vh - 80px);
   `,
   marginTop52: css`
     margin-top: 52px;
+  `,
+  sideMenu: css`
+    margin-bottom: 1rem;
   `
 }

@@ -6,25 +6,20 @@ const SideMenu = ({ openMenu, children, className }) => (
     <Sidebar.Pushable as={Segment}>
       <Sidebar
         as={Menu}
-        animation="scale down"
-        width="wide"
-        direction="right"
+        animation="bottom overlay"
+        direction="bottom"
         visible={openMenu}
         icon="labeled"
-        vertical
+        widths={3}
         inverted
       >
         <Menu.Item name="home">
           <Icon name="home" />
-          Home
+          Leaderboard
         </Menu.Item>
         <Menu.Item name="gamepad">
           <Icon name="gamepad" />
-          Games
-        </Menu.Item>
-        <Menu.Item name="camera">
-          <Icon name="camera" />
-          Channels
+          Challenges
         </Menu.Item>
       </Sidebar>
       <Sidebar.Pusher>

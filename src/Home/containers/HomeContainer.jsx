@@ -1,5 +1,10 @@
 import React from 'react'
+// import { Button } from 'semantic-ui-react'
 
-const HomeContainer = () => <h1>Home</h1>
+const HomeContainer = () => (
+  <div>
+    <h1>Leaderboard</h1>
+  </div>
+)
 
 export default HomeContainer
