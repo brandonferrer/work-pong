@@ -11,7 +11,6 @@ const SideMenu = ({ openMenu, children, className }) => (
         visible={openMenu}
         icon="labeled"
         widths={2}
-        inverted
       >
         <Menu.Item name="home">
           <Icon name="home" />

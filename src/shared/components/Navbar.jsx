@@ -4,7 +4,7 @@ import { Menu, Header, Icon, Button } from 'semantic-ui-react'
 import { css } from 'emotion'
 
 const Navbar = ({ openMenuToggle }) => (
-  <Menu inverted borderless fixed="top">
+  <Menu inverted borderless fixed="bottom">
     <Menu.Item as={Link} to="/">
       <Header className={styles.menuHeader}>{`WorkPONG 🏓`}</Header>
     </Menu.Item>
