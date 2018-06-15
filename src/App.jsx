@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { css, cx } from 'emotion'
-import { HomeContainer } from './Home'
+import { HomeContainer } from './screens/Home'
 import { Navbar, SideMenu } from './shared'
 
 class App extends Component {
