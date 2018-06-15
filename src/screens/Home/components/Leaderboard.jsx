@@ -43,7 +43,7 @@ export default Leaderboard
 
 const styles = {
   scrollingSegment: css`
-    min-height: 75vh;
+    min-height: 25vh;
     max-height: 75vh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
