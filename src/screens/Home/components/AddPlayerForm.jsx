@@ -1,7 +1,11 @@
 import React from 'react'
 import { Button, Form, Message, Segment } from 'semantic-ui-react'
 
-const AddPlayerForm = ({ newPlayer, handleNewPlayerInput }) => (
+const AddPlayerForm = ({
+  newPlayer,
+  handleNewPlayerInput,
+  handleNewPlayerSubmit
+}) => (
   <Segment basic style={{ maxWidth: '400px' }}>
     <h3>New Player</h3>
     <Form>
@@ -11,7 +15,7 @@ const AddPlayerForm = ({ newPlayer, handleNewPlayerInput }) => (
         onChange={handleNewPlayerInput}
       />
       <Message success content="Player added!" />
-      <Button>Add</Button>
+      <Button onClick={() => handleNewPlayerSubmit(newPlayer)}>Add</Button>
     </Form>
   </Segment>
 )

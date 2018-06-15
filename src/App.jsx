@@ -13,15 +13,16 @@ class App extends Component {
       { openMenu: !this.state.openMenu },
       console.log('yo', this.state.openMenu)
     )
+
   render() {
-    const { openMenu } = this.state
+    const { openMenu, players } = this.state
     return (
       <div>
         <Navbar openMenuToggle={this.openMenuToggle} />
         <SideMenu openMenu={openMenu} className={styles.sideMenu}>
           <div className={cx(styles.mainWrapper, styles.marginBottom52)}>
             <Switch>
-              <Route exact path="/" component={HomeContainer} />
+              <Route exact path="/" render={() => <HomeContainer />} />
               <Route render={() => <h1>4 OH 4!</h1>} />
             </Switch>
           </div>
