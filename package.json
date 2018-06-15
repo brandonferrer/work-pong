@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^2.6.0",
+    "firebase": "^5.0.4",
     "prettier": "1.13.5"
   }
 }
