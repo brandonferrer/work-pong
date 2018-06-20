@@ -1,15 +1,54 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Menu, Header, Icon, Button, Image, Popup } from 'semantic-ui-react'
 import { css } from 'emotion'
+import { auth, provider } from '../../firebase'
+import { addNewPlayerFirebase, authUser } from '../../duck/actionCreators'
 
-const Navbar = ({ user, openMenuToggle, login, register }) => (
+const DEFAULT_RATING = 500
+const DEFAULT_WINS = 0
+const DEFAULT_LOSS = 0
+
+const mapStateToProps = state => ({
+  players: state.players,
+  user: state.user
+})
+
+// TODO: Check if user exist before dispatching addNewUserToFirebase. If a user signs up more than once, their existing data will be overwritten.
+
+const mapDispatchToProps = dispatch => ({
+  register: () => {
+    auth.signInWithPopup(provider).then(result => {
+      const user = result.user
+      const player = {
+        name: user.displayName,
+        email: user.email,
+        rating: DEFAULT_RATING,
+        wins: DEFAULT_WINS,
+        loss: DEFAULT_LOSS
+      }
+      dispatch(authUser(user))
+      dispatch(addNewPlayerFirebase(player))
+    })
+  },
+  login: () => {
+    auth.signInWithPopup(provider).then(result => {
+      const user = result.user
+      dispatch(authUser(user))
+    })
+  }
+})
+
+const Navbar = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(({ user, openMenuToggle, login, register }) => (
   <Menu inverted borderless fixed="bottom">
     <Menu.Item as={Link} to="/">
       <Header className={styles.menuHeader}>{`WorkPONG 🏓`}</Header>
     </Menu.Item>
     <Menu.Menu position="right">
-      {console.log('user', user)}
       {user ? (
         <div className={styles.buttonWrapper}>
           <Menu.Item>
@@ -50,7 +89,7 @@ const Navbar = ({ user, openMenuToggle, login, register }) => (
       )}
     </Menu.Menu>
   </Menu>
-)
+))
 export default Navbar
 
 const styles = {
