@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import store from './duck/store'
 import App from './App'
-import registerServiceWorker from './shared/utils/registerServiceWorker'
 import 'semantic-ui-css/semantic.min.css'
 import './index.css'
 
@@ -16,4 +15,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-registerServiceWorker()
