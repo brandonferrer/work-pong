@@ -4,9 +4,7 @@ import _ from 'lodash'
 import { Table, Segment } from 'semantic-ui-react'
 
 const Leaderboard = ({ players }) => {
-  const sortedPlayers =
-    players && _.sortBy(players, [players.name, players.rating])
-
+  const sortedPlayers = players && _.sortBy(players, ['rating']).reverse()
   return (
     <Segment basic className={styles.scrollingSegment}>
       <Table celled inverted unstackable selectable>
@@ -15,8 +13,7 @@ const Leaderboard = ({ players }) => {
             <Table.HeaderCell textAlign="center">Rank</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Player</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Rating</Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">Wins</Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">Loss</Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">Wins/Loss</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -28,8 +25,9 @@ const Leaderboard = ({ players }) => {
                   <Table.Cell textAlign="center">{index + 1}</Table.Cell>
                   <Table.Cell textAlign="center">{player.name}</Table.Cell>
                   <Table.Cell textAlign="center">{player.rating}</Table.Cell>
-                  <Table.Cell textAlign="center">{player.wins}</Table.Cell>
-                  <Table.Cell textAlign="center">{player.loss}</Table.Cell>
+                  <Table.Cell textAlign="center">
+                    {player.wins} - {player.loss}
+                  </Table.Cell>
                 </Table.Row>
               )
             })}

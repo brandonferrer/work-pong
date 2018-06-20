@@ -14,7 +14,7 @@ export const addNewPlayer = player => ({
 export const addNewPlayerFirebase = player => async dispatch => {
   firebase
     .database()
-    .ref('players/' + player.name)
+    .ref('players/' + player.id)
     .set(player)
 }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Menu, Header, Icon, Button, Image, Popup } from 'semantic-ui-react'
 import { css } from 'emotion'
-import { auth, provider } from '../../firebase'
+import firebase, { auth, provider } from '../../firebase'
 import { addNewPlayerFirebase, authUser } from '../../duck/actionCreators'
 
 const DEFAULT_RATING = 500
@@ -21,7 +21,9 @@ const mapDispatchToProps = dispatch => ({
   register: () => {
     auth.signInWithPopup(provider).then(result => {
       const user = result.user
+      console.log('user from fb', user)
       const player = {
+        id: user.uid,
         name: user.displayName,
         email: user.email,
         rating: DEFAULT_RATING,

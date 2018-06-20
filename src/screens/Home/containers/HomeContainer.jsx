@@ -22,13 +22,18 @@ class HomeContainer extends Component {
         <h1>Leaderboard</h1>
         <Leaderboard players={players} />
         {!user && (
-          <div>
-            <h3 style={{ color: 'red' }}>{`⚠️ WARNING`}</h3>
-            <p>
+          <div
+            style={{
+              padding: '1rem',
+              border: '1px solid #000'
+            }}
+          >
+            <h5 style={{ color: 'red' }}>{`⚠️ WARNING`}</h5>
+            <p style={{ fontSize: '12px' }}>
               -- Don't sign up more than once, your past pong data will be lost.
               This is a bug and will be corrected in a future release.
             </p>
-            <p>
+            <p style={{ fontSize: '12px' }}>
               -- If you refresh your browser, you will be logged out and have to
               login again.
             </p>
