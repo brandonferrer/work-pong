@@ -7,7 +7,7 @@ const SideMenu = ({ openMenu, openMenuToggle, children, className }) => (
     <Sidebar.Pushable as={Segment}>
       <Sidebar
         as={Menu}
-        animation="top overlay"
+        animation="overlay"
         direction="top"
         visible={openMenu}
         icon="labeled"

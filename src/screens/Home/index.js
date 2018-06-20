@@ -1,5 +1,9 @@
 import { connect } from 'react-redux'
-import { addNewPlayer, getPlayersThunk } from '../../duck/actionCreators'
+import {
+  addNewPlayer,
+  getPlayers,
+  getPlayersThunk
+} from '../../duck/actionCreators'
 import HomeContainer from './containers/HomeContainer'
 
 const mapStateToProps = state => ({
@@ -13,6 +17,9 @@ const mapDispatchToProps = dispatch => ({
   },
   getAllPlayers: () => {
     dispatch(getPlayersThunk())
+  },
+  refreshPlayers: newPlayers => {
+    dispatch(getPlayers(newPlayers))
   }
 })
 

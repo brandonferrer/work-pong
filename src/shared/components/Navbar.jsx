@@ -51,7 +51,7 @@ const Navbar = connect(
     <Menu.Menu position="right">
       {user ? (
         <div className={styles.buttonWrapper}>
-          <Menu.Item>
+          <Menu.Item style={{ padding: 0, margin: 0 }}>
             <Popup
               header={user.displayName}
               content={user.email}
@@ -59,7 +59,7 @@ const Navbar = connect(
                 <Image
                   src={user.photoURL}
                   alt={user.displayName}
-                  style={{ width: '36px' }}
+                  style={{ width: '36px', padding: 0, margin: 0 }}
                   rounded
                 />
               }
