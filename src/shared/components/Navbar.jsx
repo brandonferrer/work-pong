@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Menu, Header, Icon, Button, Image, Popup } from 'semantic-ui-react'
 import { css } from 'emotion'
-import firebase, { auth, provider } from '../../firebase'
+import { auth, provider } from '../../firebase'
 import { addNewPlayerFirebase, authUser } from '../../duck/actionCreators'
 
 const DEFAULT_RATING = 500
