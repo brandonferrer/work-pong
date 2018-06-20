@@ -1,5 +1,12 @@
 import { combineReducers } from 'redux'
-import { ADD_NEW_PLAYER, GET_PLAYERS } from './actions'
+import { ADD_NEW_PLAYER, GET_PLAYERS, AUTH_USER } from './actions'
+
+const user = (state = null, action) => {
+  if (action.type === AUTH_USER) {
+    return action.payload
+  }
+  return state
+}
 
 const newPlayer = (state = '', action) => {
   if (action.type === ADD_NEW_PLAYER) {
@@ -15,6 +22,6 @@ const players = (state = [], action) => {
   return state
 }
 
-const rootReducer = combineReducers({ newPlayer, players })
+const rootReducer = combineReducers({ newPlayer, players, user })
 
 export default rootReducer

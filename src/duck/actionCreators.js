@@ -1,5 +1,10 @@
-import { ADD_NEW_PLAYER, GET_PLAYERS } from './actions'
+import { ADD_NEW_PLAYER, GET_PLAYERS, AUTH_USER } from './actions'
 import firebase from '../firebase'
+
+export const authUser = user => ({
+  type: AUTH_USER,
+  payload: user
+})
 
 export const addNewPlayer = player => ({
   type: ADD_NEW_PLAYER,
