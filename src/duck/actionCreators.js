@@ -1,14 +1,9 @@
-import { ADD_NEW_PLAYER, GET_PLAYERS, AUTH_USER } from './actions'
+import { GET_PLAYERS, AUTH_USER } from './actions'
 import firebase from '../firebase'
 
 export const authUser = user => ({
   type: AUTH_USER,
   payload: user
-})
-
-export const addNewPlayer = player => ({
-  type: ADD_NEW_PLAYER,
-  payload: player
 })
 
 export const addNewPlayerFirebase = player => async dispatch => {
