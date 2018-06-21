@@ -46,7 +46,7 @@ const ChallengesContainer = ({
           value={opponent}
           onChange={handleSelect}
         />
-        <Button primary fluid className={styles.buttonWrapper}>
+        <Button primary fluid style={{ marginTop: '1rem' }}>
           Submit Challenge Request
         </Button>
       </Segment>
@@ -55,9 +55,6 @@ const ChallengesContainer = ({
 }
 
 const styles = {
-  buttonWrapper: css`
-    margin-top: 1rem;
-  `,
   challengeRequestWrapper: css`
     max-width: 500px;
     margin-top: 5rem;
