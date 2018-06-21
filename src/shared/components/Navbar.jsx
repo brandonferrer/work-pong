@@ -77,12 +77,12 @@ const Navbar = connect(
         </div>
       ) : (
         <div className={styles.buttonWrapper}>
-          <Menu.Item className={styles.menuItem}>
+          <Menu.Item style={{ padding: '5px', margin: '5px' }}>
             <Button compact onClick={register}>
               Sign Up
             </Button>
           </Menu.Item>
-          <Menu.Item className={styles.menuItem}>
+          <Menu.Item style={{ padding: '5px', margin: '5px' }}>
             <Button compact primary onClick={login}>
               Login
             </Button>
@@ -112,9 +112,5 @@ const styles = {
   buttonWrapper: css`
     display: flex;
     justify-content: center;
-  `,
-  menuItem: css`
-    padding: 5px;
-    margin: 5px;
   `
 }
