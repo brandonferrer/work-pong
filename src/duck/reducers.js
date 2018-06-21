@@ -15,13 +15,13 @@ const players = (state = [], action) => {
   return state
 }
 
-const opponent = (state = '', action) => {
+const opponentToChallenge = (state = null, action) => {
   if (action.type === SET_OPPONENT) {
     return action.payload
   }
   return state
 }
 
-const rootReducer = combineReducers({ players, user, opponent })
+const rootReducer = combineReducers({ players, user, opponentToChallenge })
 
 export default rootReducer

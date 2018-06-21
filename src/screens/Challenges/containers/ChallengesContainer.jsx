@@ -20,12 +20,36 @@ const ChallengesContainer = ({
 
   const sections = [
     {
+      menuItem: 'Feed',
+      render: () => (
+        <Tab.Pane attached={false}>
+          <div className={styles.tabContentWrapper}>Feed</div>
+        </Tab.Pane>
+      )
+    },
+    {
       menuItem: 'Request',
-      render: () => <Tab.Pane attached={false}>Request</Tab.Pane>
+      render: () => (
+        <Tab.Pane attached={false}>
+          <div className={styles.tabContentWrapper}>Request</div>
+        </Tab.Pane>
+      )
     },
     {
       menuItem: 'Accepted',
-      render: () => <Tab.Pane attached={false}>Accepted</Tab.Pane>
+      render: () => (
+        <Tab.Pane attached={false}>
+          <div className={styles.tabContentWrapper}>Accepted</div>
+        </Tab.Pane>
+      )
+    },
+    {
+      menuItem: 'Results',
+      render: () => (
+        <Tab.Pane attached={false}>
+          <div className={styles.tabContentWrapper}>Results</div>
+        </Tab.Pane>
+      )
     }
   ]
 
@@ -36,7 +60,7 @@ const ChallengesContainer = ({
   return (
     <Container>
       <h1>Challenges</h1>
-      <Tab menu={{ secondary: true, pointing: true }} panes={sections} />
+      <Tab menu={{ secondary: true }} panes={sections} />
       <Segment className={styles.challengeRequestWrapper} inverted>
         <h3>Who do you want to play?</h3>
         <Dropdown
@@ -58,6 +82,15 @@ const styles = {
   challengeRequestWrapper: css`
     max-width: 500px;
     margin-top: 5rem;
+  `,
+  tabContentWrapper: css`
+    height: 50vh;
+    @media (max-width: 768px) {
+      height: 40vh;
+    }
+    @media (max-width: 420px) {
+      height: 30vh;
+    }
   `
 }
 
