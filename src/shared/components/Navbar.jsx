@@ -21,11 +21,11 @@ const mapDispatchToProps = dispatch => ({
   register: () => {
     auth.signInWithPopup(provider).then(result => {
       const user = result.user
-      console.log('user from fb', user)
       const player = {
         id: user.uid,
         name: user.displayName,
         email: user.email,
+        photo: user.photoURL,
         rating: DEFAULT_RATING,
         wins: DEFAULT_WINS,
         loss: DEFAULT_LOSS
