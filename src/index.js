@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import store from './duck/store'
 import App from './App'
-import 'semantic-ui-css/semantic.min.css'
 import './index.css'
+import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
   <Provider store={store}>

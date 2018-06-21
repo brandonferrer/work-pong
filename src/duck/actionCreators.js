@@ -1,4 +1,4 @@
-import { GET_PLAYERS, AUTH_USER } from './actions'
+import { GET_PLAYERS, AUTH_USER, SET_OPPONENT } from './actions'
 import firebase from '../firebase'
 
 export const authUser = user => ({
@@ -31,3 +31,10 @@ export const getPlayersThunk = () => dispatch => {
     })
     .then(() => dispatch(getPlayers(players)))
 }
+
+// Challenges
+
+export const setOpponent = opponent => ({
+  type: SET_OPPONENT,
+  payload: opponent
+})

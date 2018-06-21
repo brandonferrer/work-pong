@@ -1,5 +1,9 @@
 import { connect } from 'react-redux'
-import { getPlayers, getPlayersThunk } from '../../duck/actionCreators'
+import {
+  getPlayers,
+  getPlayersThunk,
+  authUser
+} from '../../duck/actionCreators'
 import HomeContainer from './containers/HomeContainer'
 
 const mapStateToProps = state => ({
@@ -13,6 +17,9 @@ const mapDispatchToProps = dispatch => ({
   },
   refreshPlayers: newPlayers => {
     dispatch(getPlayers(newPlayers))
+  },
+  persistUser: user => {
+    dispatch(authUser(user))
   }
 })
 
