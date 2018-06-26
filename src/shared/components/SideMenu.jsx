@@ -27,9 +27,9 @@ const SideMenu = ({ openMenu, openMenuToggle, children, className }) => (
           <Icon name="gamepad" />
           Challenges
         </Menu.Item>
-        <Menu.Item name="RandomMatch">
-          <Icon name="blind" />
-          Random Match
+        <Menu.Item name="Feed">
+          <Icon name="paper plane" />
+          Feed
         </Menu.Item>
       </Sidebar>
       <Sidebar.Pusher>

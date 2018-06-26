@@ -20,14 +20,6 @@ const ChallengesContainer = ({
 
   const sections = [
     {
-      menuItem: 'Feed',
-      render: () => (
-        <Tab.Pane attached={false}>
-          <div className={styles.tabContentWrapper}>Feed</div>
-        </Tab.Pane>
-      )
-    },
-    {
       menuItem: 'Request',
       render: () => (
         <Tab.Pane attached={false}>
@@ -69,6 +61,8 @@ const ChallengesContainer = ({
           options={dropdownOpponentArray}
           value={opponent}
           onChange={handleSelect}
+          placeholder="Pick a Pong Player"
+          upward
         />
         <Button primary fluid style={{ marginTop: '1rem' }}>
           Submit Challenge Request
