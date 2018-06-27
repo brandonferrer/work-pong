@@ -35,9 +35,6 @@ class HomeContainer extends Component {
               - Don't sign up more than once, your past pong data will be lost.
               This is a bug and will be corrected in a future release.
             </p>
-            <p className={styles.warningText}>
-              - Chrome mobile web browser is preferred over Safari.
-            </p>
           </div>
         )}
       </Container>
