@@ -38,3 +38,12 @@ export const setOpponent = opponent => ({
   type: SET_OPPONENT,
   payload: opponent
 })
+
+const timestamp = parseInt((new Date().getTime() / 1000).toFixed(0), 0)
+
+export const addNewChallengeFirebase = challange => async dispatch => {
+  firebase
+    .database()
+    .ref('challenges/' + timestamp)
+    .set(challange)
+}

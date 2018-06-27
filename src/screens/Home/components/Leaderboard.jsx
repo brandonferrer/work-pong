@@ -3,6 +3,12 @@ import { css } from 'emotion'
 import _ from 'lodash'
 import { Table, Segment } from 'semantic-ui-react'
 
+const userAgent = window.navigator.userAgent
+const iOS = !!userAgent.match(/iPad/i) || !!userAgent.match(/iPhone/i)
+const webkit = !!userAgent.match(/WebKit/i)
+const iOSSafari = iOS && webkit && !userAgent.match(/CriOS/i)
+const segmentMaxHeight = iOSSafari ? '65vh' : '75vh'
+
 const Leaderboard = ({ players }) => {
   const sortedPlayers = players && _.sortBy(players, ['rating']).reverse()
   return (
@@ -45,5 +51,8 @@ const styles = {
     max-height: 75vh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    @media (max-width: 768px) {
+      max-height: ${segmentMaxHeight};
+    }
   `
 }
